@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "prepare": "husky install",
+    "start": "cp .env.test .env && react-app-rewired start",
+    "build": "cp .env.dev .env && react-app-rewired build",
+    "build:production": "cp .env.prod .env && react-app-rewired build",
+    "deploy": "npm run build && bash scripts/deploy-dev.sh",
+    "deploy:production": "npm run build:production && bash scripts/deploy-prod.sh",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "jsdom": "^21.1.1"
+  }
+}
